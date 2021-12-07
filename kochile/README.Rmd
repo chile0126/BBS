@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-`kochile` is made to finish my essay
+kochile is made to finish my essay.
 
 ## Installation
 
@@ -29,36 +29,27 @@ You can install the development version of kochile from [GitHub](https://github.
 devtools::install_github("chile0126/BBS")
 ```
 
-## Usage
+## Example
 
-A fairly common task when dealing with strings is the need to split a single string into many parts.
-This is what `base::strplit()` and `stringr::str_split()` do.
+This is a basic example which shows you how to solve a common problem:
 
-```{r}
-(x <- "alfa,bravo,charlie,delta")
-strsplit(x, split = ",")
-stringr::str_split(x, pattern = ",")
-```
-
-Notice how the return value is a **list** of length one, where the first element holds the character vector of parts.
-Often the shape of this output is inconvenient, i.e. we want the un-listed version.
-
-That's exactly what `regexcite::str_split_one()` does.
-
-```{r}
+```{r example}
 library(kochile)
-
-str_split_one(x, pattern = ",")
+## basic example code
 ```
 
-Use `str_split_one()` when the input is known to be a single string.
-For safety, it will error if its input has length greater than one.
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-`str_split_one()` is built on `stringr::str_split()`, so you can use its `n` argument and stringr's general interface for describing the `pattern` to be matched.
-
-```{r}
-str_split_one(x, pattern = ",", n = 2)
-
-y <- "192.168.0.1"
-str_split_one(y, pattern = stringr::fixed("."))
+```{r cars}
+summary(cars)
 ```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
