@@ -33,7 +33,7 @@ devtools::install_github("chile0126/BBS/kochile")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r example, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library (kochile)
 library (googledrive)
 library (googlesheets4)
