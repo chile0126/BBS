@@ -49,3 +49,17 @@ The output will be a matrix, unit = meter.
 d <- get_distance ()
 d[1:6, 1:6]
 ```
+
+Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH sites. Four lists will be exported: `ele`, `ks_result`, `site_bbs`, `plot`. 
+`ele` is the elevations of KOH, entire BBS, and selected BBS sites. 
+`ks_result` is the results of Kolmogorov-Smirnov test between KOH and different kinds of BBS site elevations
+`site_bbs` is the site names of the entire and selected BBS sites.
+`plot` contains four vectors of elevations. Can be plot by `plotrix::multhist()`.
+
+```{r buffer, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library (plotrix)
+BBS_5km <- buffer_from_koh (5000)
+BBS_5km$ele$ele_koh
+BBS_5km$ks_result$ks_0914
+BBS_5km$site_bbs$site_bbs1520
+multhist (BBS_5km$plot)

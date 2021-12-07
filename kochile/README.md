@@ -66,3 +66,45 @@ d[1:6, 1:6]
 #> 110 34043.56 29299.83 36643.14 20306.73 22350.25 21597.45
 #> 112 21394.98 17405.51 26681.44 16053.78 23623.11 25391.21
 ```
+
+Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH
+sites. Four lists will be exported: `ele`, `ks_result`, `site_bbs`,
+`plot`. `ele` is the elevations of KOH, entire BBS, and selected BBS
+sites. `ks_result` is the results of Kolmogorov-Smirnov test between KOH
+and different kinds of BBS site elevations `site_bbs` is the site names
+of the entire and selected BBS sites. `plot` contains four vectors of
+elevations. Can be plot by `plotrix::multhist()`.
+
+``` r
+library (plotrix)
+BBS_5km <- buffer_from_koh (5000)
+BBS_5km$ele$ele_koh
+#>   [1]   96.65  320.72  185.40    3.41  554.49   19.37  549.19   11.89  252.52
+#>  [10]  656.50    5.30  211.38  551.52  142.19  127.81  269.78 1024.29  226.31
+#>  [19]  710.58 1595.41  327.91  467.90  120.30  492.72   73.68  285.92  574.32
+#>  [28]  396.51  150.60  276.21  524.28  712.20  140.41  102.01    2.11 2180.89
+#>  [37] 1326.22 1165.50  880.41 1711.90 1331.01  465.79 2678.69 2065.68 2097.10
+#>  [46]  715.39  875.33  568.52 1412.62  289.48   72.63  194.18 1251.50  416.28
+#>  [55] 1842.41  114.62  166.32  111.41 1709.90  140.62   81.01 1592.50 2357.83
+#>  [64] 1743.78   56.93  511.90  225.29   77.31  346.33  193.68  191.62 3092.43
+#>  [73] 2939.43 1046.59 2287.97 1959.93 1247.29 2074.49  568.93 1090.27  776.60
+#>  [82]  926.27  949.52 1754.92 1650.32  994.23  727.10  803.32  667.58 1969.03
+#>  [91] 1843.32 1502.53 1660.71 2172.03 2684.40 1367.17 2261.70 1505.69  822.88
+#> [100] 1945.42 1866.99 1210.79  419.98  510.39  389.68   35.24  442.91  883.99
+#> [109] 1354.32   96.52   53.09  160.00 1415.18   50.82  255.08  353.00 1942.70
+#> [118]  253.60 2470.92 2498.02 3219.62  960.98 1788.11 1606.52  332.99  133.92
+#> [127]  109.11    0.09 2774.90  817.62 2029.89 1267.50 1246.51  812.50  269.03
+#> [136]  670.88 1736.62 2278.57 1094.52 3210.93 1824.81
+BBS_5km$ks_result$ks_0914
+#> 
+#>  Two-sample Kolmogorov-Smirnov test
+#> 
+#> data:  ele_koh and ele_bbs0914
+#> D = 0.32747, p-value = 6.379e-07
+#> alternative hypothesis: two-sided
+BBS_5km$site_bbs$site_bbs1520
+#> NULL
+multhist (BBS_5km$plot)
+```
+
+<img src="man/figures/README-buffer-1.png" width="100%" />

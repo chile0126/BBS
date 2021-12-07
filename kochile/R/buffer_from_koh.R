@@ -23,7 +23,8 @@
 #' \item{\code{sitekm_0914}}  {site names of selected BBS data between 2009 and 2014}
 #' \item{\code{sitekm_1520}}  {site names of selected BBS data between 2015 and 2020}
 #' }
-#' \item{\code{plot}} {four vectors (without names): \code{ele_koh}, \code{ele_bbs}, \code{ele_bbs0914}, \code{ele_bbs1520}. Can be plot as histogram by \code{plotrix::multhist}.}
+#' \item{\code{plot}}\cr
+#' {four vectors (without names): \code{ele_koh}, \code{ele_bbs}, \code{ele_bbs0914}, \code{ele_bbs1520}. Can be plot as histogram by \code{plotrix::multhist}.}
 #' }
 #'
 #' @export
