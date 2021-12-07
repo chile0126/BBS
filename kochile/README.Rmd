@@ -42,10 +42,10 @@ head (site_koh)
 head (d1520) [1:6]
 ```
 
-Use `distance ()` to calculate the distances between every site from BBS data and every site from KOH.
+Use `get_distance ()` to calculate the distances between every site from BBS data and every site from KOH.
 The output will be a matrix, unit = meter.
 
 ```{r dd, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
-d <- distance ()
+d <- get_distance ()
 d[1:6, 1:6]
 ```

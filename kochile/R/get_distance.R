@@ -4,8 +4,8 @@
 #' @export
 #'
 #' @examples
-#' distance ()
-distance <- function (){
+#' get_distance ()
+get_distance <- function (){
   if (!exists ('site_bbs')){
     get_all_data ()
   }
