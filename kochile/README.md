@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-kochile is made to finish my essay.
+`kochile` is made to finish my essay.
 
 ## Installation
 
