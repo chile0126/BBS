@@ -1,25 +1,35 @@
 library (devtools)
-use_git ()
-use_r ('strsplit1')
+library (magrittr)
+library (tidyverse)
+library (googlesheets4)
+library (googledrive)
+library (raster)
+library (rgdal)
+library (plotrix)
+#建立一個function
+use_r ('get_all_data')
+
+#add the package that this package needs, only one by one
+#'stringr', 'magrittr', 'tidyverse', 'googlesheets4', 'googledrive', 'raster', 'rgdal', 'plotrix'
+use_package ()
+
+#test the function whether it works
 load_all ()
-(x <- "alfa,bravo,charlie,delta")
-#> [1] "alfa,bravo,charlie,delta"
-strsplit1(x, split = ",")
-#> [1] "alfa"    "bravo"   "charlie" "delta"
+get_all_data ()
 check ()
-use_mit_license ()
+
+#add object document, after finishing
 document ()
-?strsplit1
+?get_all_data
 check ()
 install()
-library (kochile)
-x <- 'alkjf, djlgha, dhs, dd, gypqt03u'
-strsplit1(x, split = ',')
-use_testthat ()
-use_test ('strsplit1')
+
+#add test file to test
+use_test ('get_all_data')
 test ()
-use_package ('stringr')
-rename_files ('strsplit1', 'str_split_one')
+
+
+check ()
 document ()
 load_all ()
 use_git ()
