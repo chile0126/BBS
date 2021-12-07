@@ -27,8 +27,16 @@ library (kochile)
 library (googledrive)
 library (googlesheets4)
 get_all_data ()
-ls ()
-#> character(0)
+head (site_koh)
+#> # A tibble: 6 x 6
+#>   GPS_ID X_COORDINA Y_COORDINA POINT_X POINT_Y ELEVATION
+#>    <dbl>      <dbl>      <dbl>   <dbl>   <dbl>     <dbl>
+#> 1    103    316638.   2771391.    122.    25.0     96.6 
+#> 2    104    293801.   2750174.    121.    24.9    321.  
+#> 3    108    308016.   2749326     122.    24.9    185.  
+#> 4    109    302810.   2775639.    122.    25.1      3.41
+#> 5    110    323052.   2761881.    122.    25.0    554.  
+#> 6    112    308590.   2769383.    122.    25.0     19.4
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?

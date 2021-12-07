@@ -38,7 +38,7 @@ library (kochile)
 library (googledrive)
 library (googlesheets4)
 get_all_data ()
-ls ()
+head (site_koh)
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
