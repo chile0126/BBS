@@ -39,14 +39,14 @@ library (googlesheets4)
 library (kochile)
 get_all_data ()
 head (site_koh)
-head (d1520) [1:5]
+head (d1520) [1:6]
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r dd, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 d <- distance ()
-head (d)
+head (d)[1:6]
 ```
 
 You can also embed plots, for example:
