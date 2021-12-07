@@ -51,11 +51,12 @@ head (d1520) [1:6]
 #> 6     6 大彎嘴    0.0152   0.171     0.0265 no survey
 ```
 
-Use `distance ()` to calculate the distances between every site from BBS
-data and every site from KOH. The output will be a matrix, unit = meter.
+Use `get_distance ()` to calculate the distances between every site from
+BBS data and every site from KOH. The output will be a matrix, unit =
+meter.
 
 ``` r
-d <- distance ()
+d <- get_distance ()
 d[1:6, 1:6]
 #>       A01-01   A01-02   A01-03   A01-05   A01-07   A01-08
 #> 103 22573.78 17841.19 25581.57 10583.34 16369.57 17575.30
