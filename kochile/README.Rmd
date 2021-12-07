@@ -44,8 +44,8 @@ head (d1520) [1:5]
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r distance, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
-distance <- distance ()
+```{r dd, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+distance ()
 head (distance)
 ```
 

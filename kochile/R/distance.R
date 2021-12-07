@@ -17,11 +17,11 @@ distance <- function (){
   rownames (site_koh_xy) <- site_koh$GPS_ID
   colnames (site_koh_xy) <- c('x', 'y')
 
-  distance <<- matrix (NA, nrow = length (site_koh_xy$x), ncol = length (site_bbs_xy$x), dimnames = list(site_koh$GPS_ID, site_bbs$siteid))
+  dd <- matrix (NA, nrow = length (site_koh_xy$x), ncol = length (site_bbs_xy$x), dimnames = list(site_koh$GPS_ID, site_bbs$siteid))
   for (koh in site_koh$GPS_ID %>% as.character ()){
     for (bbs in site_bbs$siteid){
-      distance[koh, bbs] <- sqrt ((site_bbs_xy[bbs, 'x'] - site_koh_xy[koh, 'x'])^2 + (site_bbs_xy[bbs, 'y'] - site_koh_xy[koh, 'y'])^2)
+      dd[koh, bbs] <- sqrt ((site_bbs_xy[bbs, 'x'] - site_koh_xy[koh, 'x'])^2 + (site_bbs_xy[bbs, 'y'] - site_koh_xy[koh, 'y'])^2)
     }
   }
-  return (distance)
+  return (dd)
 }
