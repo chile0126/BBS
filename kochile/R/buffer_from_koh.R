@@ -1,8 +1,44 @@
+#' Certain distance buffer from KOH data
+#' @description Select sites within certain distance from sites in KOH data. Also exam Kolmogorov-Smirnov test to see whether the chosen BBS sites' elevation distributions are similar to KOH's.
+#' @param d buffer distance from sites in KOH data (meter)
+#'
+#' @return a list with four list
+#' \itemize{
+#' \item{\code{ele}}
+#' \itemize{
+#' \item{\code{ele_koh}}  {elevations of every site from KOH data}
+#' \item{\code{ele_bbs}}  {elevations of every site from BBS data}
+#' \item{\code{ele_bbs0914}}  {elevations of selected BBS sites between 2009 and 2014}
+#' \item{\code{ele_bbs1520}}  {elevations of selected BBS sites between 2015 and 2020}
+#' }
+#' \item{\code{ks_result}}
+#' \itemize{
+#' \item{\code{ks_all}} {Kolmogorov-Smirnov test result between KOH and BBS}
+#' \item{\code{ks_0914}}  {Kolmogorov-Smirnov test result between KOH and 2009-2014 BBS}
+#' \item{\code{ks_1520}}  {Kolmogorov-Smirnov test result between KOH and 2015-2020 BBS}
+#' }
+#' \item{\code{site_bbs}}
+#' \itemize{
+#' \item{\code{sitekm_all}} {site names of BBS data}
+#' \item{\code{sitekm_0914}}  {site names of selected BBS data between 2009 and 2014}
+#' \item{\code{sitekm_1520}}  {site names of selected BBS data between 2015 and 2020}
+#' }
+#' \item{\code{plot}} {four vectors (without names): \code{ele_koh}, \code{ele_bbs}, \code{ele_bbs0914}, \code{ele_bbs1520}. Can be plot as histogram by \code{plotrix::multhist}.}
+#' }
+#'
+#' @export
+#'
+#' @examples
+#' buffer5000 <- buffer_from_koh (5000)
+#' multhist (buffer5000$plot, freq = F)
+#'
 buffer_from_koh <- function (d){
+
   #whether site_bbs and other data have been imported
-  if (!exists (site_bbs)){
+  if (!exists ('site_bbs')){
     get_all_data
   }
+  distance <- get_distance ()
 
   #all bbs data
   sitekm_all <- c()
