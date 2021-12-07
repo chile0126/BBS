@@ -20,7 +20,9 @@ devtools::install_github("chile0126/BBS/kochile")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+use `get_all_data ()` to import data that going to be used, which
+including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`,
+`site_bbs1520` and `site_koh`
 
 ``` r
 library (kochile)
@@ -37,6 +39,23 @@ head (site_koh)
 #> 4    109    302810.   2775639.    122.    25.1      3.41
 #> 5    110    323052.   2761881.    122.    25.0    554.  
 #> 6    112    308590.   2769383.    122.    25.0     19.4
+head (d1520)
+#> # A tibble: 6 x 552
+#>    ...1 V1       `A01-01` `A01-02` `A01-03` `A01-05`  `A01-07` `A01-08` `A01-12`
+#>   <dbl> <chr>       <dbl>    <dbl>    <dbl> <chr>        <dbl> <chr>       <dbl>
+#> 1     1 八哥      0        0         0      no survey        0 no surv~        0
+#> 2     2 叉尾雨燕  0        0.133     0      no survey        0 no surv~        0
+#> 3     3 大赤啄木  0        0         0      no survey        0 no surv~        0
+#> 4     4 大卷尾    0.159    0         0.232  no survey        0 no surv~        0
+#> 5     5 大冠鷲    0.00531  0.00796   0.0265 no survey        0 no surv~        0
+#> 6     6 大彎嘴    0.0152   0.171     0.0265 no survey        0 no surv~        0
+#> # ... with 543 more variables: A02-01 <dbl>, A02-02 <dbl>, A02-03 <dbl>,
+#> #   A02-05 <chr>, A02-06 <dbl>, A02-07 <dbl>, A02-08 <dbl>, A03-01 <dbl>,
+#> #   A03-03 <dbl>, A03-06 <dbl>, A03-07 <dbl>, A03-09 <dbl>, A03-10 <dbl>,
+#> #   A03-12 <dbl>, A03-16 <dbl>, A03-18 <dbl>, A03-19 <dbl>, A03-20 <dbl>,
+#> #   A03-21 <dbl>, A03-22 <dbl>, A03-23 <dbl>, A03-24 <dbl>, A04-01 <dbl>,
+#> #   A04-02 <dbl>, A04-03 <dbl>, A04-04 <dbl>, A04-05 <dbl>, A04-06 <dbl>,
+#> #   A04-09 <dbl>, A04-10 <dbl>, A04-11 <chr>, A04-12 <chr>, A04-16 <dbl>, ...
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?

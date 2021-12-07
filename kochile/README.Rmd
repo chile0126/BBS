@@ -31,7 +31,7 @@ devtools::install_github("chile0126/BBS/kochile")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+use `get_all_data ()` to import data that going to be used, which including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`, `site_bbs1520` and `site_koh`
 
 ```{r example, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library (kochile)
@@ -39,6 +39,7 @@ library (googledrive)
 library (googlesheets4)
 get_all_data ()
 head (site_koh)
+head (d1520)
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
