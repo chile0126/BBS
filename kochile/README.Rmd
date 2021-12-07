@@ -57,9 +57,13 @@ Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH sites. Fo
 `plot` contains four vectors of elevations. Can be plot by `plotrix::multhist()`.
 
 ```{r buffer, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library (magrittr)
 library (plotrix)
 BBS_5km <- buffer_from_koh (5000)
-BBS_5km$ele$ele_koh
-BBS_5km$ks_result$ks_0914
-BBS_5km$site_bbs$sitekm_1520
+BBS_5km$ele$ele_koh %>% head ()
+
+BBS_5km$ks_result$ks_0914 %>% head ()
+
+BBS_5km$site_bbs$sitekm_1520 %>% head ()
+
 multhist (BBS_5km$plot, freq = F)
