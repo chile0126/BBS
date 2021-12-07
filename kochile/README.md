@@ -82,22 +82,13 @@ BBS_5km <- buffer_from_koh (5000)
 BBS_5km$ele$ele_koh %>% head ()
 #> [1]  96.65 320.72 185.40   3.41 554.49  19.37
 
-BBS_5km$ks_result$ks_0914 %>% head ()
-#> $statistic
-#>         D 
-#> 0.3274746 
+BBS_5km$ks_result$ks_0914
 #> 
-#> $p.value
-#> [1] 6.379247e-07
+#>  Two-sample Kolmogorov-Smirnov test
 #> 
-#> $alternative
-#> [1] "two-sided"
-#> 
-#> $method
-#> [1] "Two-sample Kolmogorov-Smirnov test"
-#> 
-#> $data.name
-#> [1] "ele_koh and ele_bbs0914"
+#> data:  ele_koh and ele_bbs0914
+#> D = 0.32747, p-value = 6.379e-07
+#> alternative hypothesis: two-sided
 
 BBS_5km$site_bbs$sitekm_1520 %>% head ()
 #> [1] "A01-02" "A01-03" "A02-01" "A02-02" "A02-03" "A02-06"
