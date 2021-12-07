@@ -42,15 +42,10 @@ head (site_koh)
 head (d1520) [1:6]
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Use `distance ()` to calculate the distances between every site from BBS data and every site from KOH.
+The output will be a matrix, unit = meter.
 
 ```{r dd, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 d <- distance ()
-head (d)[1:6]
-```
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+d[1:6, 1:6]
 ```

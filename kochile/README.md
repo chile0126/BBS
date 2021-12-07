@@ -51,15 +51,17 @@ head (d1520) [1:6]
 #> 6     6 大彎嘴    0.0152   0.171     0.0265 no survey
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+Use `distance ()` to calculate the distances between every site from BBS
+data and every site from KOH. The output will be a matrix, unit = meter.
 
 ``` r
 d <- distance ()
-head (d)[1:6]
-#> [1] 22573.78 41568.87 41198.30 14813.86 34043.56 21394.98
+d[1:6, 1:6]
+#>       A01-01   A01-02   A01-03   A01-05   A01-07   A01-08
+#> 103 22573.78 17841.19 25581.57 10583.34 16369.57 17575.30
+#> 104 41568.87 39092.67 48569.97 40290.18 47471.56 48700.86
+#> 108 41198.30 37435.94 46745.51 34175.27 39515.91 39800.76
+#> 109 14813.86 12098.41 21558.84 17146.69 25805.91 28486.31
+#> 110 34043.56 29299.83 36643.14 20306.73 22350.25 21597.45
+#> 112 21394.98 17405.51 26681.44 16053.78 23623.11 25391.21
 ```
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
