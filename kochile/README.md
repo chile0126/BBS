@@ -20,7 +20,7 @@ devtools::install_github("chile0126/BBS/kochile")
 
 ## Example
 
-use `get_all_data ()` to import data that going to be used, which
+Use `get_all_data ()` to import data that going to be used, which
 including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`,
 `site_bbs1520` and `site_koh`
 
