@@ -31,7 +31,7 @@ devtools::install_github("chile0126/BBS/kochile")
 
 ## Example
 
-Use `get_all_data ()` to import data that going to be used, which including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`, `site_bbs1520` and `site_koh`
+Use `get_all_data ()` to import data that going to be used, which including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`, `site_bbs1520`, `site_koh`, `den_env0914` and `den_env1520`
 
 ```{r example, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library (googledrive)
@@ -40,6 +40,7 @@ library (kochile)
 get_all_data ()
 head (site_koh)
 head (d1520) [1:6]
+head (den_env0914) [1:6]
 ```
 
 Use `get_distance ()` to calculate the distances between every site from BBS data and every site from KOH.
