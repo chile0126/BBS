@@ -23,6 +23,10 @@ get_all_data()
 {Locations and elevations of sites from BBS data between 2015 and 2020}
 \item \code{site_koh}
 {Locations and elevations of sites from KOH data}
+\item \code{den_env0914}
+{Densities and environment variables between 2009 and 2014}
+\item \code{den_env1520}
+{Densities and environment variables between 2015 and 2020}
 }
 }
 \description{

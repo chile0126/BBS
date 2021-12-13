@@ -17,6 +17,10 @@
 #' {Locations and elevations of sites from BBS data between 2015 and 2020}
 #' \item \code{site_koh}
 #' {Locations and elevations of sites from KOH data}
+#' \item \code{den_env0914}
+#' {Densities and environment variables between 2009 and 2014}
+#' \item \code{den_env1520}
+#' {Densities and environment variables between 2015 and 2020}
 #' }
 #' @export
 #'
@@ -31,4 +35,6 @@ get_all_data <- function (){
   d0914 <<- range_speedread ('15PNROSdeRqW89lk9QYBlqDETMAgavq9iP37MSVWEX8o')
   d1520 <<- range_speedread ('17GdWOOFWnLbdfUEl1JGicutnY4redbhH8TtKcVoyqt8')
   dkoh <<- range_speedread ('187XSbIpspBvVOpe4ULxe6eNMi6ROxTYFCckzI9H6AL4')
+  den_env0914 <<- range_speedread ('1ehdeE57QuMHGMNhWUs_rEoQtaYV19iQV6ztrG6HnE9Y')
+  den_env1520 <<- range_speedread ('1L7G1GLv-tu0GFPVLs7ps_nRMnXPKiH0iyEPJwCbgbhk')
 }
