@@ -7,8 +7,7 @@ library (raster)
 library (rgdal)
 library (plotrix)
 library (kochile)
-?get_all_data
-get_all_data()
+
 #建立一個function
 use_r ('get_all_data')
 

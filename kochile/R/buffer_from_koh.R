@@ -37,7 +37,7 @@ buffer_from_koh <- function (d){
 
   #whether site_bbs and other data have been imported
   if (!exists ('site_bbs')){
-    get_all_data
+    get_all_data ()
   }
   distance <- get_distance ()
 
@@ -61,6 +61,8 @@ buffer_from_koh <- function (d){
     if (sum (distance[, bbs] <= d) > 0){sitekm_1520 <- c(sitekm_1520, bbs)}
   }
   ele_bbs1520 <- site_bbs1520$elevation[which (site_bbs1520$siteid %in% sitekm_1520)]
+
+
   ele_koh <- site_koh$ELEVATION
   ks_all <- ks.test (ele_koh, ele_bbs)
   ks_0914 <- ks.test (ele_koh, ele_bbs0914)
