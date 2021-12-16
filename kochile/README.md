@@ -22,7 +22,7 @@ devtools::install_github("chile0126/BBS/kochile")
 
 Use `get_all_data ()` to import data that going to be used, which
 including `d0914`, `d1520`, `dkoh`, `site_bbs`, `site_bbs0914`,
-`site_bbs1520` and `site_koh`
+`site_bbs1520`, `site_koh`, `den_env0914` and `den_env1520`
 
 ``` r
 library (googledrive)
@@ -49,6 +49,16 @@ head (d1520) [1:6]
 #> 4     4 大卷尾    0.159    0         0.232  no survey
 #> 5     5 大冠鷲    0.00531  0.00796   0.0265 no survey
 #> 6     6 大彎嘴    0.0152   0.171     0.0265 no survey
+head (den_env0914) [1:6]
+#> # A tibble: 6 x 6
+#>   siteid  八哥 叉尾雨燕 大赤啄木 大卷尾 大冠鷲
+#>   <chr>  <dbl>    <dbl>    <dbl>  <dbl>  <dbl>
+#> 1 A01-01     0        0        0 0.0162 0     
+#> 2 A01-02     0        0        0 0.0174 0.0159
+#> 3 A01-03     0        0        0 0      0     
+#> 4 A01-05     0        0        0 0      0.0212
+#> 5 A01-07     0        0        0 0      0     
+#> 6 A01-08     0        0        0 0.130  0
 ```
 
 Use `get_distance ()` to calculate the distances between every site from
