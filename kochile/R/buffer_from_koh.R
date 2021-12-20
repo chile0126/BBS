@@ -77,6 +77,6 @@ buffer_from_koh <- function (d){
   out <- list (ele = list (ele_koh = ele_koh, ele_bbs = ele_bbs, ele_bbs0914 = ele_bbs0914, ele_bbs1520 = ele_bbs1520),
                ks_result = list (ks_all = ks_all, ks_0914 = ks_0914, ks_1520 = ks_1520),
                site_bbs = list (sitekm_all = sitekm_all, sitekm_0914 = sitekm_0914, sitekm_1520 = sitekm_1520, sitekm_koh = sitekm_koh),
-               plot = list (ele_koh, ele_bbs, ele_bbs0914, ele_bbs1520))
+               plot = list (ele_koh = ele_koh, ele_bbs = ele_bbs, ele_bbs0914 = ele_bbs0914, ele_bbs1520 = ele_bbs1520))
   return (out)
 }
