@@ -80,5 +80,3 @@ buffer_from_koh <- function (d){
                plot = list (ele_koh, ele_bbs, ele_bbs0914, ele_bbs1520))
   return (out)
 }
-
-site_koh$GPS_ID %>% as.character ()
