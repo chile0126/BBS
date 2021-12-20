@@ -65,7 +65,7 @@ buffer_from_koh <- function (d){
   #koh data
   sitekm_koh <- c()
   for (koh in site_koh$GPS_ID){
-    if (sum (distance[koh, ] <= d) > 0){sitekm_koh <- c(sitekm_koh, koh)}
+    if (sum (distance[as.character (koh), ] <= d) > 0){sitekm_koh <- c(sitekm_koh, koh)}
   }
   ele_koh <- site_koh$ELEVATION[which (site_koh$GPS_ID %in% sitekm_koh)]
 
@@ -80,3 +80,5 @@ buffer_from_koh <- function (d){
                plot = list (ele_koh, ele_bbs, ele_bbs0914, ele_bbs1520))
   return (out)
 }
+
+site_koh$GPS_ID %>% as.character ()
