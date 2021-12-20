@@ -9,7 +9,7 @@ get_distance <- function (){
   if (!exists ('site_bbs')){
     get_all_data ()
   }
-  site_bbs_xy <- site_bbs %>% dplyr::select (X97, Y97) %>% as.data.frame ()
+  site_bbs_xy <- site_bbs %>% dplyr::select (X67, Y67) %>% as.data.frame ()
   rownames (site_bbs_xy) <- site_bbs$siteid
   colnames (site_bbs_xy) <- c('x', 'y')
 
