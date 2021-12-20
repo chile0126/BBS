@@ -62,14 +62,21 @@ buffer_from_koh <- function (d){
   }
   ele_bbs1520 <- site_bbs1520$elevation[which (site_bbs1520$siteid %in% sitekm_1520)]
 
+  #koh data
+  sitekm_koh <- c()
+  for (koh in site_koh$GPS_ID){
+    if (sum (distance[koh, ] <= d) > 0){sitekm_koh <- c(sitekm_koh, koh)}
+  }
+  ele_koh <- site_koh$ELEVATION[which (site_koh$GPS_ID %in% sitekm_koh)]
 
-  ele_koh <- site_koh$ELEVATION
+
+
   ks_all <- ks.test (ele_koh, ele_bbs)
   ks_0914 <- ks.test (ele_koh, ele_bbs0914)
   ks_1520 <- ks.test (ele_koh, ele_bbs1520)
   out <- list (ele = list (ele_koh = ele_koh, ele_bbs = ele_bbs, ele_bbs0914 = ele_bbs0914, ele_bbs1520 = ele_bbs1520),
                ks_result = list (ks_all = ks_all, ks_0914 = ks_0914, ks_1520 = ks_1520),
-               site_bbs = list (sitekm_all = sitekm_all, sitekm_0914 = sitekm_0914, sitekm_1520 = sitekm_1520),
+               site_bbs = list (sitekm_all = sitekm_all, sitekm_0914 = sitekm_0914, sitekm_1520 = sitekm_1520, sitekm_koh = sitekm_koh),
                plot = list (ele_koh, ele_bbs, ele_bbs0914, ele_bbs1520))
   return (out)
 }
