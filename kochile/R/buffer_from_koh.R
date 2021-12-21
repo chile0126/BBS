@@ -17,11 +17,12 @@
 #' \item{\code{ks_0914}}  {Kolmogorov-Smirnov test result between KOH and 2009-2014 BBS}
 #' \item{\code{ks_1520}}  {Kolmogorov-Smirnov test result between KOH and 2015-2020 BBS}
 #' }
-#' \item{\code{site_bbs}}
+#' \item{\code{site}}
 #' \itemize{
 #' \item{\code{sitekm_all}} {site names of BBS data}
 #' \item{\code{sitekm_0914}}  {site names of selected BBS data between 2009 and 2014}
 #' \item{\code{sitekm_1520}}  {site names of selected BBS data between 2015 and 2020}
+#' \item{\code{sitekm_koh}} {site names of koh data which at least one bbs site in the buffered zone}
 #' }
 #' \item{\code{plot}}\cr
 #' {four vectors (without names): \code{ele_koh}, \code{ele_bbs}, \code{ele_bbs0914}, \code{ele_bbs1520}. Can be plot as histogram by \code{plotrix::multhist}.}
@@ -76,7 +77,7 @@ buffer_from_koh <- function (d){
   ks_1520 <- ks.test (ele_koh, ele_bbs1520)
   out <- list (ele = list (ele_koh = ele_koh, ele_bbs = ele_bbs, ele_bbs0914 = ele_bbs0914, ele_bbs1520 = ele_bbs1520),
                ks_result = list (ks_all = ks_all, ks_0914 = ks_0914, ks_1520 = ks_1520),
-               site_bbs = list (sitekm_all = sitekm_all, sitekm_0914 = sitekm_0914, sitekm_1520 = sitekm_1520, sitekm_koh = sitekm_koh),
+               site = list (sitekm_all = sitekm_all, sitekm_0914 = sitekm_0914, sitekm_1520 = sitekm_1520, sitekm_koh = sitekm_koh),
                plot = list (ele_koh = ele_koh, ele_bbs = ele_bbs, ele_bbs0914 = ele_bbs0914, ele_bbs1520 = ele_bbs1520))
   return (out)
 }
