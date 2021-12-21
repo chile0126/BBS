@@ -51,10 +51,10 @@ d <- get_distance ()
 d[1:6, 1:6]
 ```
 
-Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH sites. Four lists will be exported: `ele`, `ks_result`, `site_bbs`, `plot`. 
+Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH sites. Four lists will be exported: `ele`, `ks_result`, `site`, `plot`. 
 `ele` is the elevations of KOH, entire BBS, and selected BBS sites. 
-`ks_result` is the results of Kolmogorov-Smirnov test between KOH and different kinds of BBS site elevations
-`site_bbs` is the site names of the entire and selected BBS sites.
+`ks_result` is the results of Kolmogorov-Smirnov test between KOH and different kinds of BBS site elevations.
+`site` is the site names of the entire and selected BBS sites and the koh sites which at least one BBS site in the buffered zone.
 `plot` contains four vectors of elevations. Can be plot by `plotrix::multhist()`.
 
 ```{r buffer, echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}

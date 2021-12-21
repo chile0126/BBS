@@ -30,15 +30,15 @@ library (googlesheets4)
 library (kochile)
 get_all_data ()
 head (site_koh)
-#> # A tibble: 6 x 6
-#>   GPS_ID X_COORDINA Y_COORDINA POINT_X POINT_Y ELEVATION
-#>    <dbl>      <dbl>      <dbl>   <dbl>   <dbl>     <dbl>
-#> 1    103    316638.   2771391.    122.    25.0     96.6 
-#> 2    104    293801.   2750174.    121.    24.9    321.  
-#> 3    108    308016.   2749326     122.    24.9    185.  
-#> 4    109    302810.   2775639.    122.    25.1      3.41
-#> 5    110    323052.   2761881.    122.    25.0    554.  
-#> 6    112    308590.   2769383.    122.    25.0     19.4
+#> # A tibble: 6 x 7
+#>   GPS_ID X_COORDINA Y_COORDINA POINT_X POINT_Y ELEVATION   BSR
+#>    <dbl>      <dbl>      <dbl>   <dbl>   <dbl>     <dbl> <dbl>
+#> 1    103    316638.   2771391.    122.    25.0     96.6     11
+#> 2    104    293801.   2750174.    121.    24.9    321.      19
+#> 3    108    308016.   2749326     122.    24.9    185.      18
+#> 4    109    302810.   2775639.    122.    25.1      3.41    10
+#> 5    110    323052.   2761881.    122.    25.0    554.      22
+#> 6    112    308590.   2769383.    122.    25.0     19.4     11
 head (d1520) [1:6]
 #> # A tibble: 6 x 6
 #>    ...1 V1       `A01-01` `A01-02` `A01-03` `A01-05` 
@@ -69,21 +69,22 @@ meter.
 d <- get_distance ()
 d[1:6, 1:6]
 #>       A01-01   A01-02   A01-03   A01-05   A01-07   A01-08
-#> 103 22573.78 17841.19 25581.57 10583.34 16369.57 17575.30
-#> 104 41568.87 39092.67 48569.97 40290.18 47471.56 48700.86
-#> 108 41198.30 37435.94 46745.51 34175.27 39515.91 39800.76
-#> 109 14813.86 12098.41 21558.84 17146.69 25805.91 28486.31
-#> 110 34043.56 29299.83 36643.14 20306.73 22350.25 21597.45
-#> 112 21394.98 17405.51 26681.44 16053.78 23623.11 25391.21
+#> 103 23203.28 18449.35 26012.94 10647.22 16005.87 17058.76
+#> 104 41565.48 39002.76 48499.49 39944.17 47039.29 48216.01
+#> 108 41484.04 37660.67 46927.75 34118.97 39300.86 39509.64
+#> 109 14953.28 11991.09 21502.74 16452.65 25089.91 27729.43
+#> 110 34674.66 29918.11 37142.06 20694.77 22412.39 21519.84
+#> 112 21772.73 17678.14 26863.43 15702.35 23103.45 24785.40
 ```
 
 Use `buffer_from_koh (d)` to select BBS sites with `d` meters from KOH
-sites. Four lists will be exported: `ele`, `ks_result`, `site_bbs`,
-`plot`. `ele` is the elevations of KOH, entire BBS, and selected BBS
-sites. `ks_result` is the results of Kolmogorov-Smirnov test between KOH
-and different kinds of BBS site elevations `site_bbs` is the site names
-of the entire and selected BBS sites. `plot` contains four vectors of
-elevations. Can be plot by `plotrix::multhist()`.
+sites. Four lists will be exported: `ele`, `ks_result`, `site`, `plot`.
+`ele` is the elevations of KOH, entire BBS, and selected BBS sites.
+`ks_result` is the results of Kolmogorov-Smirnov test between KOH and
+different kinds of BBS site elevations. `site` is the site names of the
+entire and selected BBS sites and the koh sites which at least one BBS
+site in the buffered zone. `plot` contains four vectors of elevations.
+Can be plot by `plotrix::multhist()`.
 
 ``` r
 library (magrittr)
@@ -97,11 +98,11 @@ BBS_5km$ks_result$ks_0914
 #>  Two-sample Kolmogorov-Smirnov test
 #> 
 #> data:  ele_koh and ele_bbs0914
-#> D = 0.32747, p-value = 6.379e-07
+#> D = 0.26688, p-value = 0.0003774
 #> alternative hypothesis: two-sided
 
 BBS_5km$site_bbs$sitekm_1520 %>% head ()
-#> [1] "A01-02" "A01-03" "A02-01" "A02-02" "A02-03" "A02-06"
+#> NULL
 
 multhist (BBS_5km$plot, freq = F)
 ```
